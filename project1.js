@@ -36,8 +36,12 @@ http.createServer((req, res) => {
     // console.log("redirecting to the home page")
 
     // }
-    
-    else if(path=='/services'){
+  else if(path=='/services'){
+        res.writeHead(200,{'content-type':'text/html'
+    });
+    const fileContent5 = fs.readFileSync("./services.html")
+    res.write(fileContent5);
+    res.end();
         console.log("services page")
     }
     else {
